@@ -27,7 +27,7 @@ class BuildingService:
             dlat = building_lat_rad - lat_rad
             dlng = building_lng_rad - lng_rad
             
-            a = func.sin(dlat/2)**2 + func.cos(lat_rad) * func.cos(building_lat_rad) * func.sin(dlng/2)**2
+            a = a = func.pow(func.sin(dlat/2), 2) + func.cos(lat_rad) * func.cos(building_lat_rad) * func.pow(func.sin(dlng/2), 2)
             c = 2 * func.asin(func.sqrt(a))
             distance = earth_radius_km * c
             
